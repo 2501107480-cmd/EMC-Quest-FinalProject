@@ -167,9 +167,21 @@
 
   <script>
     const answers = {
-      q1: "A", q2: "C", q3: "B", q4: "C", q5: "D",
-      q6: "B", q7: "B", q8: "C", q9: "B", q10: "D",
-      q11: "B", q12: "A", q13: "A", q14: "A", q15: "B"
+      q1: { answer: "A", explanation: "HTML means HyperText Markup Language. It structures the content of webpages." },
+      q2: { answer: "C", explanation: "The h1 element is the highest-level heading and usually represents the page's main heading." },
+      q3: { answer: "B", explanation: "The img element embeds an image. It is a void element and does not need a closing tag." },
+      q4: { answer: "C", explanation: "CSS means Cascading Style Sheets. It controls the presentation and layout of HTML." },
+      q5: { answer: "D", explanation: "A period starts a class selector, such as .highlight." },
+      q6: { answer: "B", explanation: "The background-color property sets an element's background color." },
+      q7: { answer: "B", explanation: "Padding is the space between an element's content and its border. Margin is the space outside the border." },
+      q8: { answer: "C", explanation: "Setting display: flex makes an element a flex container." },
+      q9: { answer: "B", explanation: "The :hover pseudo-class applies styles while a pointing device is over an element." },
+      q10: { answer: "D", explanation: "External Cascading Style Sheets use the .css file extension." },
+      q11: { answer: "B", explanation: "The ul element creates an unordered (bulleted) list; ol creates a numbered list." },
+      q12: { answer: "A", explanation: "The form element groups controls used to collect and submit information." },
+      q13: { answer: "A", explanation: "The border-radius property rounds the corners of an element's border." },
+      q14: { answer: "A", explanation: "In Flexbox, justify-content aligns items along the main axis. By default, the main axis runs horizontally." },
+      q15: { answer: "B", explanation: "The head element contains document metadata, the title, and links to resources such as stylesheets." }
     };
 
     const form = document.getElementById("quiz-form");
@@ -184,16 +196,39 @@
 
       Object.keys(answers).forEach(function (questionName) {
         const selected = form.querySelector('input[name="' + questionName + '"]:checked');
+        const question = form.querySelector('input[name="' + questionName + '"]').closest(".question");
+        let feedback = question.querySelector(".question-feedback");
+
+        if (!feedback) {
+          feedback = document.createElement("p");
+          feedback.className = "question-feedback";
+          feedback.setAttribute("aria-live", "polite");
+          question.appendChild(feedback);
+        }
+
+        question.classList.remove("is-correct", "is-incorrect", "is-unanswered");
         if (!selected) {
           unanswered += 1;
-        } else if (selected.value === answers[questionName]) {
+          question.classList.add("is-unanswered");
+          feedback.textContent = "Not answered. Correct answer: " +
+            question.querySelector('input[value="' + answers[questionName].answer + '"]').parentElement.textContent.trim() +
+            ". " + answers[questionName].explanation;
+        } else if (selected.value === answers[questionName].answer) {
           score += 1;
+          question.classList.add("is-correct");
+          feedback.textContent = "Correct. " + answers[questionName].explanation;
+        } else {
+          question.classList.add("is-incorrect");
+          feedback.textContent = "Not quite. Correct answer: " +
+            question.querySelector('input[value="' + answers[questionName].answer + '"]').parentElement.textContent.trim() +
+            ". " + answers[questionName].explanation;
         }
       });
 
       if (unanswered > 0) {
-        scoreText.textContent = "Please answer " + unanswered + " remaining " + (unanswered === 1 ? "question" : "questions") + ".";
-        messageText.textContent = "Your current score is " + score + " out of 15.";
+        scoreText.textContent = "Current score: " + score + " / 15";
+        messageText.textContent = unanswered + " " + (unanswered === 1 ? "question is" : "questions are") +
+          " unanswered. Explanations are shown below each question.";
       } else {
         scoreText.textContent = "Your score: " + score + " / 15";
         messageText.textContent = score >= 12
@@ -204,11 +239,17 @@
       }
 
       result.hidden = false;
-      result.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
     });
 
     document.getElementById("quiz-reset").addEventListener("click", function () {
       result.hidden = true;
+      form.querySelectorAll(".question-feedback").forEach(function (feedback) {
+        feedback.remove();
+      });
+      form.querySelectorAll(".question").forEach(function (question) {
+        question.classList.remove("is-correct", "is-incorrect", "is-unanswered");
+      });
     });
   </script>
 </body>
