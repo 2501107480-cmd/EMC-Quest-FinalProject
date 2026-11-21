@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beyond the screen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="library.css" />
+</head>
+<body>
+  <header class="header">
+    <h1 class="header-title">Beyond the Screen</h1>
+    <a class="start-quiz-btn" href="quiz.html">Start Quiz</a>
+  </header>
+
+  <main class="library-main">
+    <article class="learning-guide">
+      <header class="guide-hero">
+        <p class="guide-kicker">Beginner's Learning Guide</p>
+        <h2>Fundamentals of HTML and CSS</h2>
+        <p class="guide-subtitle">Learning the structure, style, and layout of web pages</p>
+      </header>
+
+      <section class="guide-section" id="objectives">
+        <h2>Learning Objectives</h2>
+        <p>At the end of this learning guide, students should be able to:</p>
+        <ul>
+          <li>Explain the roles of HTML, CSS, and JavaScript in web development.</li>
+          <li>Identify the basic structure of an HTML document.</li>
+          <li>Use common HTML elements to organize text, images, links, lists, tables, and forms.</li>
+          <li>Apply inline, internal, and external CSS.</li>
+          <li>Use CSS selectors and common styling properties.</li>
+          <li>Explain the CSS box model and create simple layouts using Flexbox.</li>
+          <li>Develop a basic personal profile webpage using HTML and CSS.</li>
+        </ul>
+      </section>
+
+      <section class="guide-section" id="introduction">
+        <h2>1. Introduction to Web Development</h2>
+        <p>Web development is the process of creating websites and web applications that people access through web browsers such as Google Chrome, Microsoft Edge, and Firefox.</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Technology</th><th>Full Name</th><th>Main Purpose</th><th>Examples</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>HTML</td><td>HyperText Markup Language</td><td>Defines webpage structure and content.</td><td>Headings, paragraphs, images, links, tables</td></tr>
+              <tr><td>CSS</td><td>Cascading Style Sheets</td><td>Controls the appearance and layout of a webpage.</td><td>Colors, fonts, spacing, borders, layouts</td></tr>
+              <tr><td>JavaScript</td><td>JavaScript</td><td>Adds behavior and interactivity.</td><td>Menus, pop-ups, form validation, dynamic content</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <aside class="analogy">
+          <strong>A simple analogy</strong>
+          <p>Think of a website as a house: HTML is the structure, CSS is the paint and decoration, and JavaScript provides interactive features and functionality.</p>
+        </aside>
+      </section>
+
+      <section class="guide-section" id="html-fundamentals">
+        <p class="part-label">Part I — HTML Fundamentals</p>
+        <h2>2. What is HTML?</h2>
+        <p>HTML stands for HyperText Markup Language. It is the standard markup language used to create the structure and content of webpages. HTML uses elements, commonly written with opening and closing tags, to tell the browser how content is organized.</p>
+
+        <h2>3. Basic HTML Document Structure</h2>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;My First Website&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Welcome to HTML&lt;/h1&gt;
+  &lt;p&gt;This is my first webpage.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Element</th><th>Purpose</th></tr></thead>
+            <tbody>
+              <tr><td><code>&lt;!DOCTYPE html&gt;</code></td><td>Declares that the document uses HTML5.</td></tr>
+              <tr><td><code>&lt;html&gt;</code></td><td>Root element of the HTML document.</td></tr>
+              <tr><td><code>&lt;head&gt;</code></td><td>Contains metadata and information about the webpage.</td></tr>
+              <tr><td><code>&lt;meta&gt;</code></td><td>Provides character encoding and viewport settings.</td></tr>
+              <tr><td><code>&lt;title&gt;</code></td><td>Sets the title displayed in the browser tab.</td></tr>
+              <tr><td><code>&lt;body&gt;</code></td><td>Contains the visible webpage content.</td></tr>
+              <tr><td><code>&lt;h1&gt;</code></td><td>Defines a top-level heading.</td></tr>
+              <tr><td><code>&lt;p&gt;</code></td><td>Defines a paragraph.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>4. HTML Tags and Elements</h2>
+        <p>An HTML element usually consists of an opening tag, content, and a closing tag. For example, in <code>&lt;p&gt;Hello, World!&lt;/p&gt;</code>, <code>&lt;p&gt;</code> is the opening tag, the words are the content, and <code>&lt;/p&gt;</code> is the closing tag.</p>
+
+        <h3>4.1 Heading Tags</h3>
+        <p>HTML provides six heading levels, from <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>. Use headings in a logical order to organize page content.</p>
+        <pre><code>&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;h2&gt;Subheading&lt;/h2&gt;
+&lt;h3&gt;Heading Level 3&lt;/h3&gt;
+&lt;h4&gt;Heading Level 4&lt;/h4&gt;
+&lt;h5&gt;Heading Level 5&lt;/h5&gt;
+&lt;h6&gt;Heading Level 6&lt;/h6&gt;</code></pre>
+
+        <h3>4.2 Paragraph and Text Formatting</h3>
+        <pre><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;strong&gt;Important text&lt;/strong&gt;
+&lt;b&gt;Bold text&lt;/b&gt;
+&lt;em&gt;Emphasized text&lt;/em&gt;
+&lt;i&gt;Italic text&lt;/i&gt;
+&lt;u&gt;Underlined text&lt;/u&gt;
+&lt;mark&gt;Highlighted text&lt;/mark&gt;
+&lt;del&gt;Deleted text&lt;/del&gt;</code></pre>
+        <p>Use semantic elements such as <code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code> when meaning or importance matters, rather than choosing elements only for their visual appearance.</p>
+
+        <h3>4.3 Links</h3>
+        <p>The anchor element creates a hyperlink. The <code>href</code> attribute specifies the destination.</p>
+        <pre><code>&lt;a href="https://www.google.com"&gt;Visit Google&lt;/a&gt;</code></pre>
+
+        <h3>4.4 Images</h3>
+        <p>The <code>img</code> element embeds an image and does not need a closing tag.</p>
+        <pre><code>&lt;img src="picture.jpg" alt="A description of the picture" width="300"&gt;</code></pre>
+        <ul>
+          <li><code>src</code> specifies the image file or image URL.</li>
+          <li><code>alt</code> provides alternative text describing the image.</li>
+          <li><code>width</code> and <code>height</code> specify image dimensions.</li>
+        </ul>
+
+        <h3>4.5 Ordered and Unordered Lists</h3>
+        <pre><code>&lt;h2&gt;My Subjects&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;CSS&lt;/li&gt;
+  &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;My Hobbies&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Reading&lt;/li&gt;
+  &lt;li&gt;Coding&lt;/li&gt;
+  &lt;li&gt;Gaming&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        <div class="table-wrap">
+          <table><thead><tr><th>Tag</th><th>Purpose</th></tr></thead><tbody>
+            <tr><td><code>&lt;ol&gt;</code></td><td>Creates a numbered list.</td></tr>
+            <tr><td><code>&lt;ul&gt;</code></td><td>Creates a bulleted list.</td></tr>
+            <tr><td><code>&lt;li&gt;</code></td><td>Defines an item in a list.</td></tr>
+          </tbody></table>
+        </div>
+
+        <h3>4.6 Tables</h3>
+        <pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Course&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Juan&lt;/td&gt;
+    &lt;td&gt;BSIT&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+        <div class="table-wrap">
+          <table><thead><tr><th>Tag</th><th>Purpose</th></tr></thead><tbody>
+            <tr><td><code>&lt;table&gt;</code></td><td>Creates a table.</td></tr>
+            <tr><td><code>&lt;tr&gt;</code></td><td>Creates a table row.</td></tr>
+            <tr><td><code>&lt;th&gt;</code></td><td>Defines a header cell.</td></tr>
+            <tr><td><code>&lt;td&gt;</code></td><td>Defines a data cell.</td></tr>
+          </tbody></table>
+        </div>
+
+        <h3>4.7 Forms and Input Elements</h3>
+        <pre><code>&lt;form&gt;
+  &lt;label for="fullname"&gt;Full Name:&lt;/label&gt;
+  &lt;input type="text" id="fullname" name="fullname"
+         placeholder="Enter your name"&gt;
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email"&gt;
+  &lt;label for="password"&gt;Password:&lt;/label&gt;
+  &lt;input type="password" id="password" name="password"&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+        <div class="table-wrap">
+          <table><thead><tr><th>Input Type</th><th>Purpose</th></tr></thead><tbody>
+            <tr><td><code>text</code></td><td>Accepts a line of text.</td></tr>
+            <tr><td><code>email</code></td><td>Accepts an email address and checks its basic format.</td></tr>
+            <tr><td><code>password</code></td><td>Masks the entered password.</td></tr>
+            <tr><td><code>number</code></td><td>Accepts numeric input.</td></tr>
+            <tr><td><code>date</code></td><td>Allows the user to select a date.</td></tr>
+            <tr><td><code>radio</code></td><td>Allows one option to be selected from a group.</td></tr>
+            <tr><td><code>checkbox</code></td><td>Allows one or more options to be selected.</td></tr>
+            <tr><td><code>file</code></td><td>Allows the user to select a file.</td></tr>
+          </tbody></table>
+        </div>
+      </section>
+
+      <section class="guide-section" id="css-fundamentals">
+        <p class="part-label">Part II — CSS Fundamentals</p>
+        <h2>5. What is CSS?</h2>
+        <p>CSS stands for Cascading Style Sheets. It describes how HTML elements should look on screen, on paper, or in other media. CSS can control colors, fonts, spacing, borders, positioning, and responsive layouts.</p>
+
+        <h2>6. Three Ways to Apply CSS</h2>
+        <h3>6.1 Inline CSS</h3>
+        <pre><code>&lt;h1 style="color: blue; text-align: center;"&gt;
+Welcome to CSS
+&lt;/h1&gt;</code></pre>
+
+        <h3>6.2 Internal CSS</h3>
+        <pre><code>&lt;head&gt;
+  &lt;style&gt;
+    h1 { color: blue; text-align: center; }
+    p { color: green; }
+  &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+
+        <h3>6.3 External CSS</h3>
+        <p>External CSS is stored in a separate <code>.css</code> file and connected with a <code>link</code> element.</p>
+        <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
+        <pre><code>h1 {
+  color: blue;
+  text-align: center;
+}
+
+p {
+  color: green;
+  font-size: 18px;
+}</code></pre>
+
+        <h2>7. CSS Syntax</h2>
+        <pre><code>selector {
+  property: value;
+}</code></pre>
+        <pre><code>h1 {
+  color: red;
+  font-size: 30px;
+}</code></pre>
+        <p>The selector identifies what to style, the property identifies the style feature, and the value specifies the setting.</p>
+
+        <h2>8. Common CSS Selectors</h2>
+        <h3>8.1 Element Selector</h3>
+        <pre><code>p {
+  color: blue;
+}</code></pre>
+        <p>Selects all paragraph elements.</p>
+
+        <h3>8.2 Class Selector</h3>
+        <pre><code>&lt;p class="highlight"&gt;Important information&lt;/p&gt;
+
+.highlight {
+  color: red;
+  font-weight: bold;
+}</code></pre>
+        <p>A class selector starts with a period and can be reused on multiple elements.</p>
+
+        <h3>8.3 ID Selector</h3>
+        <pre><code>&lt;h1 id="title"&gt;My Website&lt;/h1&gt;
+
+#title {
+  color: green;
+  text-align: center;
+}</code></pre>
+        <p>An ID should be unique within a page.</p>
+
+        <h2>9. Common CSS Properties</h2>
+        <h3>9.1 Text Styling</h3>
+        <pre><code>h1 {
+  color: blue;
+  font-size: 32px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-align: center;
+}</code></pre>
+
+        <div class="table-wrap">
+          <table><thead><tr><th>Property</th><th>Function</th></tr></thead><tbody>
+            <tr><td><code>color</code></td><td>Changes text color.</td></tr>
+            <tr><td><code>font-size</code></td><td>Changes text size.</td></tr>
+            <tr><td><code>font-family</code></td><td>Specifies the typeface.</td></tr>
+            <tr><td><code>font-weight</code></td><td>Controls text thickness.</td></tr>
+            <tr><td><code>text-align</code></td><td>Aligns text.</td></tr>
+            <tr><td><code>text-decoration</code></td><td>Adds or removes text decoration.</td></tr>
+          </tbody></table>
+        </div>
+
+        <h3>9.2 Background Styling</h3>
+        <pre><code>body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: #ffffff;
+  background-color: #2563eb;
+}</code></pre>
+
+        <h3>9.3 Borders</h3>
+        <pre><code>div {
+  border: 2px solid black;
+}</code></pre>
+        <p>The border shorthand follows this pattern: width, style, and color. Common styles include solid, dashed, dotted, and double.</p>
+
+        <h3>9.4 Margin and Padding</h3>
+        <pre><code>.card {
+  margin: 20px;
+  padding: 15px;
+  border: 2px solid black;
+}</code></pre>
+        <p>Margin creates space outside an element's border. Padding creates space between the content and the element's border.</p>
+
+        <h3>9.5 Width and Height</h3>
+        <pre><code>.box {
+  width: 300px;
+  height: 200px;
+}</code></pre>
+        <p>Width and height control an element's dimensions. Useful sizing values include pixels, percentages, rem, and viewport units.</p>
+      </section>
+
+      <section class="guide-section" id="css-layout">
+        <p class="part-label">Part III — CSS Layout and Design</p>
+        <h2>10. CSS Display Property</h2>
+        <pre><code>.block { display: block; }
+.inline { display: inline; }
+.flex { display: flex; }
+.grid { display: grid; }</code></pre>
+        <div class="table-wrap">
+          <table><thead><tr><th>Display Value</th><th>Description</th></tr></thead><tbody>
+            <tr><td><code>block</code></td><td>Starts on a new line and generally takes the available width.</td></tr>
+            <tr><td><code>inline</code></td><td>Flows with surrounding text and takes only the space it needs.</td></tr>
+            <tr><td><code>inline-block</code></td><td>Flows inline while allowing width and height to be set.</td></tr>
+            <tr><td><code>flex</code></td><td>Creates a flexible one-dimensional layout.</td></tr>
+            <tr><td><code>grid</code></td><td>Creates a two-dimensional grid layout.</td></tr>
+            <tr><td><code>none</code></td><td>Removes the element from the layout.</td></tr>
+          </tbody></table>
+        </div>
+
+        <h2>11. CSS Flexbox</h2>
+        <pre><code>&lt;div class="container"&gt;
+  &lt;div class="box"&gt;HTML&lt;/div&gt;
+  &lt;div class="box"&gt;CSS&lt;/div&gt;
+  &lt;div class="box"&gt;JavaScript&lt;/div&gt;
+&lt;/div&gt;
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.box {
+  background-color: lightblue;
+  padding: 30px;
+}</code></pre>
+
+        <h2>12. CSS Hover Effect</h2>
+        <pre><code>&lt;button class="btn"&gt;Click Me&lt;/button&gt;
+
+.btn {
+  background-color: blue;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: darkblue;
+}</code></pre>
+
+        <h2>13. Border Radius and Box Shadow</h2>
+        <pre><code>.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}</code></pre>
+        <ul>
+          <li><code>border-radius</code> rounds the corners of an element.</li>
+          <li><code>box-shadow</code> adds a shadow around an element.</li>
+        </ul>
+      </section>
+
+      <section class="guide-section" id="laboratory">
+        <p class="part-label">Part IV — Hands-On Laboratory</p>
+        <h2>14. Create Your First Personal Profile Webpage</h2>
+        <p><strong>Objective:</strong> Apply basic HTML tags and CSS properties to create a simple personal profile webpage.</p>
+
+        <h3>Expected Content</h3>
+        <ul>
+          <li>Student name and course/program</li>
+          <li>A short About Me paragraph</li>
+          <li>A list of at least three hobbies</li>
+          <li>A Contact Me button</li>
+          <li>A background color and readable text styling</li>
+          <li>A profile container with padding, rounded corners, and a subtle shadow</li>
+        </ul>
+
+        <h3>Step 1. Create the Project Folder</h3>
+        <p>Open Visual Studio Code. Create a folder named <code>HTML-CSS-Activity</code>. Inside the folder, create <code>index.html</code> and <code>style.css</code>.</p>
+
+        <h3>Step 2. Write the HTML Code</h3>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;My Profile&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="profile"&gt;
+    &lt;h1&gt;Juan Dela Cruz&lt;/h1&gt;
+    &lt;h3&gt;BSIT Student&lt;/h3&gt;
+    &lt;h2&gt;About Me&lt;/h2&gt;
+    &lt;p&gt;Hello! I am a student learning HTML and CSS.
+       I enjoy coding and creating websites.&lt;/p&gt;
+    &lt;h2&gt;My Hobbies&lt;/h2&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Coding&lt;/li&gt;
+      &lt;li&gt;Playing Online Games&lt;/li&gt;
+      &lt;li&gt;Reading&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;button&gt;Contact Me&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <h3>Step 3. Write the CSS Code</h3>
+        <pre><code>body {
+  background-color: #f1f5f9;
+  font-family: Arial, sans-serif;
+}
+
+.profile {
+  background-color: white;
+  width: 400px;
+  margin: 50px auto;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: blue;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+  color: gray;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darkblue;
+}</code></pre>
+
+        <h3>Step 4. Run and Improve the Webpage</h3>
+        <ul>
+          <li>Save both files.</li>
+          <li>Open <code>index.html</code> in Google Chrome or use the Live Server extension in Visual Studio Code.</li>
+          <li>Change the sample name to your own name.</li>
+          <li>Write your own About Me paragraph and hobbies.</li>
+          <li>Experiment with the background color, font size, and button design.</li>
+          <li>Check that the page is readable on a smaller screen.</li>
+        </ul>
+      </section>
+
+      <section class="guide-section" id="teaching-sequence">
+        <h2>15. Suggested Teaching Sequence</h2>
+        <div class="table-wrap">
+          <table><thead><tr><th>Lesson</th><th>Topic</th></tr></thead><tbody>
+            <tr><td>1</td><td>Introduction to HTML and CSS</td></tr>
+            <tr><td>2</td><td>HTML Document Structure</td></tr>
+            <tr><td>3</td><td>HTML Tags and Elements</td></tr>
+            <tr><td>4</td><td>Lists, Tables, Links, and Images</td></tr>
+            <tr><td>5</td><td>HTML Forms</td></tr>
+            <tr><td>6</td><td>Introduction to CSS</td></tr>
+            <tr><td>7</td><td>CSS Selectors and Properties</td></tr>
+            <tr><td>8</td><td>Colors, Fonts, Borders, Margin, and Padding</td></tr>
+            <tr><td>9</td><td>CSS Box Model</td></tr>
+            <tr><td>10</td><td>Flexbox and Layout</td></tr>
+            <tr><td>11</td><td>Hover Effects and Basic Styling</td></tr>
+            <tr><td>12</td><td>Personal Profile Website Project</td></tr>
+          </tbody></table>
+        </div>
+        <aside class="teaching-tip">
+          <strong>Teaching Tip</strong>
+          <p>Teach HTML structure before introducing CSS. First, allow students to understand how HTML elements organize content. Then demonstrate how CSS changes the appearance and layout of those elements. Encourage students to type, run, and modify the code themselves.</p>
+        </aside>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
